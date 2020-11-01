@@ -61,7 +61,7 @@ def calc(var):
             kts*=1000
         return res
     def flo(a,b,c,d,th,var):
-        des = {1:' десятая',3:' тысячная',4:' десьтитысячная',2:' сотая',5:' стотысячная'}
+        des = {1:' десятых',3:' тысячных',4:' десьтитысячных',2:' сотых',5:' стотысячных'}
         f = int(var)
         var = var - int(var)
         var = round(var,4)
@@ -136,10 +136,9 @@ def calc(var):
         var.strip()
         if re.search(r'[a-z]|[0-9]', var,re.I):
             return "Введен неверный символ"
+        var = re.split(r'\s+',var)
         return inp(var,a,b,c)
     elif type(var) == int:
         return intg(a,b,c,d,th,var)
     elif type(var)==float:
         return flo(a,b,c,d,th,var)
-var = "десять"
-calc(var)
